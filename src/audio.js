@@ -5,7 +5,6 @@ audioPlayers.forEach((player) => setupAudioPlayer(player));
 
 function wrapAudioElem(audioElem) {
   const transcript = audioElem.nextElementSibling.innerHTML;
-  console.log(audioElem.nextElementSibling);
   const playerClone = audioElem.cloneNode(true);
   const template = document.getElementById("audio-player-template");
   const node = template.content.firstElementChild.cloneNode(true);
@@ -16,7 +15,8 @@ function wrapAudioElem(audioElem) {
 
 function setupAudioPlayer(player) {
   const audio = player.querySelector("audio");
-  player.querySelector(".title").textContent = audio.getAttribute("data-title");
+  player.querySelector(".title").textContent =
+    audio.getAttribute("data-title") || "";
   const transcriptTarget = player.querySelector(".transcript");
   const progress = player.querySelector(".progress-slider");
   const currentTime = player.querySelector(".current-time");
