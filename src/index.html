@@ -11,61 +11,72 @@
   </head>
   <body>
     <main>
-      <div class="audio-player">
-        <audio controls>
-          <source src="audio.wav" type="audio/wav" />
-          Your browser does not support the audio element.
-        </audio>
-        <div class="controls">
-          <h4 class="title">audio file</h4>
-          <div class="play">
-            <button class="btn-icon play-pause-button">
-              <span class="material-symbols-outlined">play_circle</span>
-            </button>
-          </div>
+      <audio data-title="one" controls>
+        <source src="audio.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+      <div data-transcript>transcript one</div>
 
-          <div class="controlsGrid">
-            <div class="time">
-              <span class="current-time">00:00</span>
-            </div>
-            <div>
-              <input
-                type="range"
-                class="progress-slider"
-                min="0"
-                max="100"
-                step="0.1"
-                value="0"
-              />
-            </div>
-            <div class="time">
-              <span class="duration">00:00</span>
-            </div>
+      <audio data-title="two" controls>
+        <source src="audio.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+      <div data-transcript>transcript two</div>
 
-            <div class="mute">
-              <button class="btn-icon mute-button">
-                <span class="material-symbols-outlined">volume_off</span>
+      <hr />
+      <template id="audio-player-template">
+        <div class="audio-player">
+          <div class="controls">
+            <h4 class="title"></h4>
+            <div class="play">
+              <button class="btn-icon play-pause-button">
+                <span class="material-symbols-outlined">play_circle</span>
               </button>
             </div>
-            <input
-              type="range"
-              class="volume-slider"
-              min="0"
-              max="1"
-              step="0.01"
-              value="1"
-            />
-            <div></div>
+
+            <div class="controlsGrid">
+              <div class="time">
+                <span class="current-time">00:00</span>
+              </div>
+              <div>
+                <input
+                  type="range"
+                  class="progress-slider"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="0"
+                />
+              </div>
+              <div class="time">
+                <span class="duration">00:00</span>
+              </div>
+
+              <div class="mute">
+                <button class="btn-icon mute-button">
+                  <span class="material-symbols-outlined">volume_off</span>
+                </button>
+              </div>
+              <input
+                type="range"
+                class="volume-slider"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+              />
+              <div></div>
+            </div>
+          </div>
+          <div class="transcriptContainer">
+            <button class="showHideTranscriptBtn">
+              <span>Transcript</span
+              ><span class="material-symbols-outlined">chevron_right</span>
+            </button>
+            <div class="transcript">Blah blah</div>
           </div>
         </div>
-        <div class="transcriptContainer">
-          <button class="showHideTranscriptBtn">
-            <span>Transcript</span
-            ><span class="material-symbols-outlined">chevron_right</span>
-          </button>
-          <div class="transcript">Blah blah</div>
-        </div>
-      </div>
+      </template>
     </main>
     <script src="audio.js"></script>
   </body>

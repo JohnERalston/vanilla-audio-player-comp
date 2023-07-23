@@ -5,6 +5,14 @@
   --primary-hover-color: #0d8bef;
 }
 
+audio {
+  display: none;
+}
+[data-transcript] {
+  overflow: hidden;
+  height: 0;
+}
+
 .audio-player {
   border: 1px solid var(--primary-color);
   border-radius: 5px;
