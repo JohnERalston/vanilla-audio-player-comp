@@ -1,9 +1,15 @@
-body{
-    padding: 0;
-    margin: 0;
+body {
+  padding: 0;
+  margin: 0;
 }
 
 main {
-    margin: 2% 4%;
-    background-color: aliceblue;
+  margin: 2% 4%;
+}
+
+.otherContent {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
 }

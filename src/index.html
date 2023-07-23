@@ -11,19 +11,20 @@
   </head>
   <body>
     <main>
-      <audio data-title="one" controls>
+      <audio data-title="Title One" controls>
         <source src="audio.wav" type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
       <div data-transcript>transcript one</div>
 
-      <audio data-title="two" controls>
+      <div class="otherContent">Other Content</div>
+
+      <audio data-title="Title Two" controls>
         <source src="audio.wav" type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
       <div data-transcript>transcript two</div>
 
-      <hr />
       <template id="audio-player-template">
         <div class="audio-player">
           <div class="controls">
