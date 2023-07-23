@@ -17,7 +17,6 @@ function setupAudioPlayer(player) {
   const audio = player.querySelector("audio");
   player.querySelector(".title").textContent =
     audio.getAttribute("data-title") || "";
-  const transcriptTarget = player.querySelector(".transcript");
   const progress = player.querySelector(".progress-slider");
   const currentTime = player.querySelector(".current-time");
   const durationTime = player.querySelector(".duration");

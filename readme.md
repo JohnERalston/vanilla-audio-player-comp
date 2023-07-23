@@ -2,7 +2,14 @@
 
 #### Converts native audio elements to more UX friendly and aesthetically pleasing utilities.
 
+---
+
+**_Works with `11ty`_**
+
+---
+
 Will convert this
+
 ![before](./media/before.png)
 
 ```html
@@ -98,4 +105,8 @@ to this:
 
 Now all native audio elements will be replaced.
 
+---
+
 Look at `index.html` for a full example.
+
+---
