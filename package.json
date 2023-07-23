@@ -1,0 +1,15 @@
+{
+  "name": "audio-player",
+  "version": "1.0.0",
+  "description": "HTML/JS styled audio player with transcription",
+  
+  "author": "John Ralston",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
