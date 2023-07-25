@@ -61,7 +61,7 @@ to this:
         <div>
           <input
             type="range"
-            class="progress-slider"
+            class="hidden range-input progress-slider"
             min="0"
             max="100"
             step="0.1"
@@ -77,14 +77,16 @@ to this:
             <span class="material-symbols-outlined">volume_off</span>
           </button>
         </div>
-        <input
-          type="range"
-          class="volume-slider"
-          min="0"
-          max="1"
-          step="0.01"
-          value="1"
-        />
+        <div>
+          <input
+            type="range"
+            class="hidden range-input volume-slider"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+        </div>
         <div></div>
       </div>
     </div>
