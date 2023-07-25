@@ -34,18 +34,8 @@ function setupAudioPlayer(player) {
   // give the input slider gradients initial values
   volumeSlider.style.backgroundSize = volumeSlider.value * 100 + "% 100%";
   volumeSlider.classList.remove("hidden");
-
-  // give the input slider gradients initial values
-  audio.addEventListener(
-    "canplaythrough",
-    () => {
-      const audioPercent = (audio.currentTime / audio.duration) * 100;
-      progress.style.backgroundSize = audioPercent + "% 100%";
-      progress.classList.remove("hidden");
-      // console.log({ audioPercent, vol: volumeSlider.style.backgroundSize });
-    },
-    false
-  );
+  progress.style.backgroundSize = "0% 100%";
+  progress.classList.remove("hidden");
 
   const showHideTranscriptBtn = player.querySelector(".showHideTranscriptBtn");
   showHideTranscriptBtn.addEventListener("click", () => {
