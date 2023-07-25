@@ -17,7 +17,7 @@ audio {
   border: 1px solid var(--primary-color);
   border-radius: 5px;
   padding: 10px;
-  background-color: #fff;
+  background-color: var(--background-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,6 +38,7 @@ audio {
 .audio-player .controlsGrid {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
+  align-items: center;
 }
 
 .audio-player .btn-icon {
@@ -114,4 +115,90 @@ audio {
 .audio-player .showHideTranscriptBtn.open + .transcript {
   height: auto;
   padding: 10px 0px;
+}
+
+.audio-player .range-input.hidden {
+  visibility: hidden;
+}
+.audio-player .range-input {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 200px;
+  height: 5px;
+  background: var(--secondary-color);
+  border-radius: 5px;
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+  background-repeat: no-repeat;
+}
+
+/* Input Thumb */
+.audio-player .range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+.audio-player .range-input::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+.audio-player .range-input::-ms-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+.audio-player .range-input::-webkit-slider-thumb:hover {
+  background: var(--primary-hover-color);
+}
+
+.audio-player .range-input::-moz-range-thumb:hover {
+  background: var(--primary-hover-color);
+}
+
+.audio-player .range-input::-ms-thumb:hover {
+  background: var(--primary-hover-color);
+}
+
+.audio-player .range-input {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Input Track */
+.audio-player .range-input::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.audio-player .range-input::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.audio-player .range-input::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
 }

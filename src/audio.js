@@ -31,6 +31,22 @@ function setupAudioPlayer(player) {
   const muteButton = player.querySelector(".mute-button");
   const muteButtonIcon = muteButton.querySelector(".material-symbols-outlined");
 
+  // give the input slider gradients initial values
+  volumeSlider.style.backgroundSize = volumeSlider.value * 100 + "% 100%";
+  volumeSlider.classList.remove("hidden");
+
+  // give the input slider gradients initial values
+  audio.addEventListener(
+    "canplaythrough",
+    () => {
+      const audioPercent = (audio.currentTime / audio.duration) * 100;
+      progress.style.backgroundSize = audioPercent + "% 100%";
+      progress.classList.remove("hidden");
+      // console.log({ audioPercent, vol: volumeSlider.style.backgroundSize });
+    },
+    false
+  );
+
   const showHideTranscriptBtn = player.querySelector(".showHideTranscriptBtn");
   showHideTranscriptBtn.addEventListener("click", () => {
     const open = showHideTranscriptBtn.classList.contains("open");
@@ -60,6 +76,9 @@ function setupAudioPlayer(player) {
     const progressPercent = (audio.currentTime / audio.duration) * 100;
     progress.value = progressPercent;
 
+    // update bar
+    progress.style.backgroundSize = progressPercent + "% 100%";
+
     // Update current time display
     const currentTimeMinutes = Math.floor(audio.currentTime / 60);
     const currentTimeSeconds = Math.floor(audio.currentTime % 60);
@@ -77,6 +96,8 @@ function setupAudioPlayer(player) {
 
   // Update volume on slider change
   volumeSlider.addEventListener("input", () => {
+    volumeSlider.style.backgroundSize = volumeSlider.value * 100 + "% 100%";
+
     audio.volume = volumeSlider.value;
     // If the volume is set to 0, update the mute button text accordingly
     if (audio.volume === 0) {
@@ -103,5 +124,6 @@ function setupAudioPlayer(player) {
       muteButtonIcon.textContent = "volume_up";
       volumeSlider.value = 0; // Set the volume slider value to 0 when muted
     }
+    volumeSlider.style.backgroundSize = volumeSlider.value * 100 + "% 100%";
   });
 }
