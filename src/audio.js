@@ -4,7 +4,10 @@ const audioPlayers = document.querySelectorAll(".audio-player");
 audioPlayers.forEach((player) => setupAudioPlayer(player));
 
 function wrapAudioElem(audioElem) {
-  const transcriptElem = audioElem.nextElementSibling;
+  let transcriptElem = audioElem.nextElementSibling;
+  if (!transcriptElem || !transcriptElem.hasAttribute("data-transcript")) {
+    transcriptElem = document.createElement("div");
+  }
   const transcript = transcriptElem.innerHTML;
   const playerClone = audioElem.cloneNode(true);
   const template = document.getElementById("audio-player-template");
