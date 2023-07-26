@@ -8,11 +8,16 @@ function wrapAudioElem(audioElem) {
   if (!transcriptElem || !transcriptElem.hasAttribute("data-transcript")) {
     transcriptElem = document.createElement("div");
   }
-  const transcript = transcriptElem.innerHTML;
+  const transcript = transcriptElem.innerHTML.trim();
+  const hasTranscript = !!transcript;
   const playerClone = audioElem.cloneNode(true);
   const template = document.getElementById("audio-player-template");
   const node = template.content.firstElementChild.cloneNode(true);
-  node.querySelector(".transcript").innerHTML = transcript;
+  const templateTranscriptElem = node.querySelector(".transcript");
+  templateTranscriptElem.innerHTML = transcript;
+  if (!hasTranscript) {
+    node.querySelector(".transcriptContainer").classList.add("hidden");
+  }
   transcriptElem.innerHTML = "";
 
   node.prepend(playerClone);

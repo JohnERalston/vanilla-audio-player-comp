@@ -117,6 +117,11 @@ audio {
   padding: 10px 0px;
 }
 
+.transcriptContainer.hidden {
+  display: none;
+}
+
+/* Input Range */
 .audio-player .range-input.hidden {
   visibility: hidden;
 }
